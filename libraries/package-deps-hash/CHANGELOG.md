@@ -1,6 +1,13 @@
 # Change Log - @microsoft/package-deps-hash
 
-This log was last generated on Wed, 19 Apr 2017 20:18:06 GMT and should not be manually modified.
+This log was last generated on Tue, 20 Jun 2017 23:21:16 GMT and should not be manually modified.
+
+## 2.0.3
+Tue, 20 Jun 2017 23:21:16 GMT
+
+### Patches
+
+- Add missing API Extractor release tags
 
 ## 2.0.2
 Wed, 19 Apr 2017 20:18:06 GMT
