@@ -5,11 +5,16 @@
 //       IT IS INVOKED BY THE "Run.cmd" AND "Debug.cmd" BATCH FILES.
 
 import * as ts from 'typescript';
+import * as path from 'path';
 import * as os from 'os';
 import Extractor from './Extractor';
+import DtsGenerator from './generators/DtsGenerator';
 import ApiFileGenerator from './generators/ApiFileGenerator';
 import ApiJsonGenerator from './generators/ApiJsonGenerator';
-import ApiDefinitionReference, { IApiDefinintionReferenceParts } from './ApiDefinitionReference';
+
+// const ROOT_DIR: string = './test/inputs/example4';
+const ROOT_DIR: string = '../../../spc/spfx-core/sp-core-library';
+const ENTRY_POINT: string = 'src/index.ts';
 
 const compilerOptions: ts.CompilerOptions = {
   target: ts.ScriptTarget.ES5,
@@ -17,8 +22,8 @@ const compilerOptions: ts.CompilerOptions = {
   moduleResolution: ts.ModuleResolutionKind.NodeJs,
   experimentalDecorators: true,
   jsx: ts.JsxEmit.React,
-  rootDir: './testInputs/example4',
-  typeRoots: ['./'] // We need to ignore @types in these tests
+  rootDir: ROOT_DIR,
+  types: [ 'es6-collections', 'webpack-env' ]
 };
 
 const extractor: Extractor = new Extractor( {
@@ -32,26 +37,28 @@ const extractor: Extractor = new Extractor( {
 
 extractor.loadExternalPackages('./testInputs/external-api-json');
 
-extractor.analyze({entryPointFile: './testInputs/example4/src/index.ts',
-  otherFiles: []});
+process.chdir(ROOT_DIR);
 
-const externalPackageApiRef: IApiDefinintionReferenceParts = {
-  scopeName: '',
-  packageName: 'es6-collections',
-  exportName: '',
-  memberName: ''
-};
+extractor.analyze(
+  {
+    entryPointFile: path.join(ROOT_DIR, ENTRY_POINT),
+    otherFiles: [
+      path.join(ROOT_DIR, './typings/tsd.d.ts')
+    ]
+  }
+);
 
 // Normally warnings are kept by the ApiItem data structure,
 // and written to the '*.api.ts' file.
 const warnings: string[] = [];
 
-const apiDefinitionRef: ApiDefinitionReference = ApiDefinitionReference.createFromParts(externalPackageApiRef);
+// const apiFileGenerator: ApiFileGenerator = new ApiFileGenerator();
+// apiFileGenerator.writeApiFile(path.join(__dirname, './DebugRun-Output.api.ts'), extractor);
 
-const apiFileGenerator: ApiFileGenerator = new ApiFileGenerator();
-apiFileGenerator.writeApiFile('./lib/DebugRun.api.ts', extractor);
+// const apiJsonGenerator: ApiJsonGenerator = new ApiJsonGenerator();
+// apiJsonGenerator.writeJsonFile(path.join(__dirname, './DebugRun-Output.json'), extractor);
 
-const apiJsonGenerator: ApiJsonGenerator = new ApiJsonGenerator();
-apiJsonGenerator.writeJsonFile('./lib/DebugRun.json', extractor);
+const dtsGenerator: DtsGenerator = new DtsGenerator();
+dtsGenerator.writeDtsFile(path.join(__dirname, './DebugRun-Output.d.ts'), extractor);
 
 console.log('DebugRun completed.');
