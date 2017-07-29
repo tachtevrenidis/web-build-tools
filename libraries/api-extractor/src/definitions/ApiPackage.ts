@@ -44,51 +44,51 @@ export default class ApiPackage extends ApiItemContainer {
       jsdocNode: foundDescription
     };
   }
+
   constructor(extractor: Extractor, rootFile: ts.SourceFile) {
     super(ApiPackage._getOptions(extractor, rootFile));
     this.kind = ApiItemKind.Package;
     // The scoped package name. (E.g. "@microsoft/api-extractor")
     this.name = this.extractor.packageJsonLookup.readPackageName(this.extractor.packageFolder);
 
-    const exportSymbols: ts.Symbol[] = this.typeChecker.getExportsOfModule(this.declarationSymbol);
-    if (exportSymbols) {
-      for (const exportSymbol of exportSymbols) {
-        const followedSymbol: ts.Symbol = this.followAliases(exportSymbol);
+    const exportSymbols: ts.Symbol[] = this.typeChecker.getExportsOfModule(this.declarationSymbol) || [];
 
-        if (!followedSymbol.declarations) {
-          // This is an API Extractor bug, but it could happen e.g. if we upgrade to a new
-          // version of the TypeScript compiler that introduces new AST variations that we
-          // haven't tested before.
-          this.reportWarning(`Definition with no declarations: ${exportSymbol.name}`);
-          continue;
-        }
+    for (const exportSymbol of exportSymbols) {
+      const followedSymbol: ts.Symbol = TypeScriptHelpers.followAliases(exportSymbol, this.typeChecker);
 
-        for (const declaration of followedSymbol.declarations) {
-          const options: IApiItemOptions = {
-            extractor: this.extractor,
-            declaration,
-            declarationSymbol: followedSymbol,
-            jsdocNode: declaration,
-            exportSymbol
-          };
-
-          if (followedSymbol.flags & (ts.SymbolFlags.Class | ts.SymbolFlags.Interface)) {
-            this.addMemberItem(new ApiStructuredType(options));
-          } else if (followedSymbol.flags & ts.SymbolFlags.ValueModule) {
-            this.addMemberItem(new ApiNamespace(options));
-          } else if (followedSymbol.flags & ts.SymbolFlags.Function) {
-            this.addMemberItem(new ApiFunction(options));
-          } else if (followedSymbol.flags & ts.SymbolFlags.Enum) {
-            this.addMemberItem(new ApiEnum(options));
-          } else {
-            this.reportWarning(`Unsupported export: ${exportSymbol.name}`);
-          }
-        }
-        this._exportedNormalizedSymbols.push({
-          exportedName: exportSymbol.name,
-          followedSymbol: followedSymbol
-        });
+      if (!followedSymbol.declarations) {
+        // This is an API Extractor bug, but it could happen e.g. if we upgrade to a new
+        // version of the TypeScript compiler that introduces new AST variations that we
+        // haven't tested before.
+        this.reportWarning(`Definition with no declarations: ${exportSymbol.name}`);
+        continue;
       }
+
+      for (const declaration of followedSymbol.declarations) {
+        const options: IApiItemOptions = {
+          extractor: this.extractor,
+          declaration,
+          declarationSymbol: followedSymbol,
+          jsdocNode: declaration,
+          exportSymbol
+        };
+
+        if (followedSymbol.flags & (ts.SymbolFlags.Class | ts.SymbolFlags.Interface)) {
+          this.addMemberItem(new ApiStructuredType(options));
+        } else if (followedSymbol.flags & ts.SymbolFlags.ValueModule) {
+          this.addMemberItem(new ApiNamespace(options));
+        } else if (followedSymbol.flags & ts.SymbolFlags.Function) {
+          this.addMemberItem(new ApiFunction(options));
+        } else if (followedSymbol.flags & ts.SymbolFlags.Enum) {
+          this.addMemberItem(new ApiEnum(options));
+        } else {
+          this.reportWarning(`Unsupported export: ${exportSymbol.name}`);
+        }
+      }
+      this._exportedNormalizedSymbols.push({
+        exportedName: exportSymbol.name,
+        followedSymbol: followedSymbol
+      });
     }
   }
 
@@ -104,7 +104,7 @@ export default class ApiPackage extends ApiItemContainer {
    * the string "MyClass".
    */
   public tryGetExportedSymbolName(symbol: ts.Symbol): string {
-    const followedSymbol: ts.Symbol = this.followAliases(symbol);
+    const followedSymbol: ts.Symbol = TypeScriptHelpers.followAliases(symbol, this.typeChecker);
     for (const exportedSymbol of this._exportedNormalizedSymbols) {
       if (exportedSymbol.followedSymbol === followedSymbol) {
         return exportedSymbol.exportedName;
