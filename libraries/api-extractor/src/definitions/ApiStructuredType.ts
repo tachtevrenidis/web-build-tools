@@ -49,7 +49,7 @@ export default class ApiStructuredType extends ApiItemContainer {
       this.kind = ApiItemKind.Class;
     }
 
-    for (const memberDeclaration of this._classLikeDeclaration.members) {
+    for (const memberDeclaration of this._classLikeDeclaration.members || []) {
       const memberSymbol: ts.Symbol = TypeScriptHelpers.tryGetSymbolForDeclaration(memberDeclaration);
       if (memberSymbol) {
         this._processMember(memberSymbol, memberDeclaration);
