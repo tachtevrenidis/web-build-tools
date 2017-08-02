@@ -1,0 +1,27 @@
+{
+  "name": "@ms/api-yaml-builder",
+  "version": "0.1.0",
+  "description": "Read JSON files from api-extractor, write YAML files for docs.microsoft.com",
+  "scripts": {
+    "build": "gulp",
+    "clean": "gulp clean",
+    "test": "gulp test"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@microsoft/sp-build-node": "~1.1.0",
+    "@types/colors": "1.1.1",
+    "@types/es6-collections": "0.5.29",
+    "@types/es6-promise": "0.0.32",
+    "@types/fs-extra": "0.0.37",
+    "@types/js-yaml": "~3.5.31",
+    "@types/node": "6.0.64",
+    "gulp": "~3.9.1"
+  },
+  "dependencies": {
+    "@microsoft/api-extractor": "2.2.0",
+    "colors": "~1.1.2",
+    "fs-extra": "~0.26.7",
+    "js-yaml": "~3.8.4"
+  }
+}
