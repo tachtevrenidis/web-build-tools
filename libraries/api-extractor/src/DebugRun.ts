@@ -58,7 +58,7 @@ const warnings: string[] = [];
 // const apiJsonGenerator: ApiJsonGenerator = new ApiJsonGenerator();
 // apiJsonGenerator.writeJsonFile(path.join(__dirname, './DebugRun-Output.json'), extractor);
 
-const dtsGenerator: DtsGenerator = new DtsGenerator();
-dtsGenerator.writeDtsFile(path.join(__dirname, './DebugRun-Output.d.ts'), extractor);
+const dtsGenerator: DtsGenerator = new DtsGenerator(extractor);
+dtsGenerator.writeDtsFile(path.join(__dirname, './DebugRun-Output.d.ts'));
 
 console.log('DebugRun completed.');

@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 export interface DeclarationBase {
     jsDocComment?: string;
     comment?: string;
@@ -631,7 +633,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
         function printMember(member: ObjectTypeMember) {
             switch (member.kind) {
                 case 'index-signature':
-                    printDeclarationComments(member);
+                    printDeclarationComments(member as DeclarationBase);
                     tab();
                     print(`[${member.name}: `);
                     writeReference(member.indexType);
@@ -718,11 +720,11 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
                 case "object":
                     printObjectTypeMembers(e.members);
                     break;
-                    
+
                 case "string-literal":
                     print(JSON.stringify(e.value));
                     break;
-                    
+
                 case "number-literal":
                     if (isNaN(e.value)) print("typeof NaN");
                     else if (!isFinite(e.value)) print("typeof Infinity");
