@@ -1,0 +1,72 @@
+pageSchema: class
+pageId: web-apis.body
+title: Body class
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body.arraybuffer
+        text: arrayBuffer()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<ArrayBuffer>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body.blob
+        text: blob()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<Blob>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body.formdata
+        text: formData()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<FormData>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body.json
+        text: json()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<any>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body.text
+        text: text()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<string>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false

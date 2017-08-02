@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.guid.isvalid
+title: Guid.isValid method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Indicates whether a guid is valid, i.e. whether it would be successfully parsed by Guid.tryParse(). This function
+      is cheaper than Guid.tryParse() because it does not construct a Guid object.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static isValid(guid: string | undefined | null): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: 'true, if the Guid is valid.'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: guid
+    typeColumn:
+      - elementKind: text
+        text: guid
+    descriptionColumn:
+      - elementKind: text
+        text: guid
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

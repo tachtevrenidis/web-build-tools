@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.body.blob
+title: Body.blob method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'blob(): Promise<Blob>;'
+returnType:
+  - elementKind: text
+    text: Promise<Blob>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

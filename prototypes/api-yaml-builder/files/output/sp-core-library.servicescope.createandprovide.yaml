@@ -1,0 +1,46 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.createandprovide
+title: ServiceScope.createAndProvide method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      This is a shorthand function that its equivalent to constructing a new instance of the simpleServiceClass, then
+      registering it by calling ServiceScope.provide().
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: "public createAndProvide < T >(serviceKey: ServiceKey<T>,\r\n    simpleServiceClass: { new (serviceScope: ServiceScope); }): T;"
+returnType:
+  - elementKind: text
+    text: T
+returnDescription:
+  - elementKind: text
+    text: '- a newly constructed instance of simpleServiceClass'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: serviceKey
+    typeColumn:
+      - elementKind: text
+        text: serviceKey
+    descriptionColumn:
+      - elementKind: text
+        text: serviceKey
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: simpleServiceClass
+    typeColumn:
+      - elementKind: text
+        text: simpleServiceClass
+    descriptionColumn:
+      - elementKind: text
+        text: simpleServiceClass
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

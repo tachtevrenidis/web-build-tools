@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.whenfinished
+title: ServiceScope.whenFinished method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      It is an error to call ServiceScope.consume() before finish() has been called. The most reliable way to protect
+      your component against this error is to perform the consume() calls inside a whenFinished() callback. If the
+      service scope is already finished, then the callback will be executed immediately; otherwise, it will be executed
+      later when the scope is finished.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public whenFinished(callback: () => void): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: callback
+    typeColumn:
+      - elementKind: text
+        text: callback
+    descriptionColumn:
+      - elementKind: text
+        text: callback
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

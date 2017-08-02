@@ -1,0 +1,58 @@
+pageSchema: class
+pageId: sp-core-library.timeprovider
+title: TimeProvider class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: This is the default implementation of ITimeProvider that simply calls the real browser APIs.
+remarks: []
+extends: []
+implements:
+  - elementKind: text
+    text: ITimeProvider
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.timeprovider.getdate
+        text: getDate()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: Date
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.timeprovider.gettimestamp
+        text: getTimestamp()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: number
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(serviceScope: ServiceScope);'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: sp-core-library.timeprovider
+      text: TimeProvider
+    - elementKind: text
+      text: ' class'
+  remarks: []

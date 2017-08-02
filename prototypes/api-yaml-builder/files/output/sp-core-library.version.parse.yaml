@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.version.parse
+title: Version.parse method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Constructs a new Version instance using the version string. tryParse validates the input version string and throws
+      error if it is invalid
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static parse(versionString: string | undefined | null): Version;'
+returnType:
+  - elementKind: text
+    text: Version
+returnDescription:
+  - elementKind: text
+    text: 'If valid, a new Version instace'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: versionString
+    typeColumn:
+      - elementKind: text
+        text: versionString
+    descriptionColumn:
+      - elementKind: text
+        text: versionString
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

@@ -1,0 +1,14 @@
+pageSchema: class
+pageId: sp-core-library.environment
+title: Environment class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: This class contains contextual information about the enviroment that is hosting the framework and its components.
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable: []

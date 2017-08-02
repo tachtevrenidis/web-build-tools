@@ -1,0 +1,46 @@
+pageSchema: method
+pageId: sp-core-library.version.compare
+title: Version.compare method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Compares two Version classes
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static compare(v1: Version, v2: Version): number;'
+returnType:
+  - elementKind: text
+    text: number
+returnDescription:
+  - elementKind: text
+    text: >-
+      -1 if the first input is less than the second input, 0 if the first input is equal to the second input, 1 if the
+      first input is greater than the second input.
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: v1
+    typeColumn:
+      - elementKind: text
+        text: v1
+    descriptionColumn:
+      - elementKind: text
+        text: v1
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: v2
+    typeColumn:
+      - elementKind: text
+        text: v2
+    descriptionColumn:
+      - elementKind: text
+        text: v2
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

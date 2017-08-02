@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.body.formdata
+title: Body.formData method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'formData(): Promise<FormData>;'
+returnType:
+  - elementKind: text
+    text: Promise<FormData>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

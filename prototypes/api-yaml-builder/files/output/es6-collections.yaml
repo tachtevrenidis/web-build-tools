@@ -1,0 +1,89 @@
+pageSchema: package
+pageId: es6-collections
+title: es6-collections package
+package: es6-collections
+deprecatedMessage: ''
+betaWarning: ''
+summary: []
+remarks: []
+classesTable: []
+interfacesTable:
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.foreachable
+        text: ForEachable
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.iterator
+        text: Iterator
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.iteratorresult
+        text: IteratorResult
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.map
+        text: Map
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.mapconstructor
+        text: MapConstructor
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.set
+        text: Set
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.setconstructor
+        text: SetConstructor
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.weakmap
+        text: WeakMap
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.weakmapconstructor
+        text: WeakMapConstructor
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.weakset
+        text: WeakSet
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: es6-collections.weaksetconstructor
+        text: WeakSetConstructor
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+functionsTable: []
+enumsTable: []

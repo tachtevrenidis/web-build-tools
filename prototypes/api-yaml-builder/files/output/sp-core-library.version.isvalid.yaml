@@ -1,0 +1,33 @@
+pageSchema: method
+pageId: sp-core-library.version.isvalid
+title: Version.isValid method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Indicates whether a version string is valid
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static isValid(versionString: string | undefined | null): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: Value indicating whether the version is valid.
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: versionString
+    typeColumn:
+      - elementKind: text
+        text: versionString
+    descriptionColumn:
+      - elementKind: text
+        text: versionString
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

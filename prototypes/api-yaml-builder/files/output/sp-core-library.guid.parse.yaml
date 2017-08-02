@@ -1,0 +1,37 @@
+pageSchema: method
+pageId: sp-core-library.guid.parse
+title: Guid.parse method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: 'Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.'
+remarks:
+  - elementKind: text
+    text: >-
+      Example syntaxes accepted by this function: 'd5369f3b-bd7a-412a-9c0f-7f0650bb5489'
+      '{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}' '/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)'
+fullSignature:
+  - elementKind: text
+    text: 'public static parse(guidString: string | undefined | null): Guid;'
+returnType:
+  - elementKind: text
+    text: Guid
+returnDescription:
+  - elementKind: text
+    text: A valid Guid object
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: guid
+    typeColumn:
+      - elementKind: text
+        text: guid
+    descriptionColumn:
+      - elementKind: text
+        text: guid
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.version.greaterthan
+title: Version.greaterThan method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Checks if this version is greater (i.e. newer) than the input parameter. Missing patch number is treated as zero
+      Examples: 1.0.0 greaterThan 0.0.9 -> true 2.0 greaterThan 2.0.0 -> false 3.0.1 greaterThan 3.0 -> true
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public greaterThan(compareWith: Version): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: A boolean indicating if this version is greater than the input parameter
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: compareWith
+    typeColumn:
+      - elementKind: text
+        text: compareWith
+    descriptionColumn:
+      - elementKind: text
+        text: compareWith
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

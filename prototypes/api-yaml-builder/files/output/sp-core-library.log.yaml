@@ -1,0 +1,81 @@
+pageSchema: class
+pageId: sp-core-library.log
+title: Log class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      The Log class provides static methods for logging messages at different levels (verbose, info, warning, error) and
+      with context information. Context information helps identify which component generated the messages and makes the
+      messages useful and filterable.
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.log.error
+        text: 'error(source, error, scope)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Logs an error
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.log.info
+        text: 'info(source, message, scope)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Logs an informational message
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.log.verbose
+        text: 'verbose(source, message, scope)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Logs a verbose message
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.log.warn
+        text: 'warn(source, message, scope)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Logs a warning
+    isDeprecated: false
+    isBeta: false
+    isStatic: true

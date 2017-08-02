@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.delete
+title: Headers.delete method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'delete(name: string): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

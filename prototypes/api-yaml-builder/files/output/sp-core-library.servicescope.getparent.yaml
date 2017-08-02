@@ -1,0 +1,22 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.getparent
+title: ServiceScope.getParent method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: 'Returns the parent of the current ServiceScope, or undefined if this is a root scope.'
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public getParent(): ServiceScope | undefined;'
+returnType:
+  - elementKind: text
+    text: ServiceScope | undefined
+returnDescription:
+  - elementKind: text
+    text: '- the parent service scope'
+parametersTable: []
+accessModifier: public
+isStatic: false

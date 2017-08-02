@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.version.equals
+title: Version.equals method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Checks if this version is equal to the input parameter. Missing patch number is treated as zero. Examples: 1.0.0
+      equals 1.0.0 -> true 2.0.1 equals 2.0.0 -> false 3.0 equals 3.0.0 -> true 04.01 equals 4.1 -> true
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public equals(compareWith: Version): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: A boolean indicating if this version is equal to the input parameter
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: compareWith
+    typeColumn:
+      - elementKind: text
+        text: compareWith
+    descriptionColumn:
+      - elementKind: text
+        text: compareWith
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

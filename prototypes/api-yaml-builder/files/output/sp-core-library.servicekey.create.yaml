@@ -1,0 +1,47 @@
+pageSchema: method
+pageId: sp-core-library.servicekey.create
+title: ServiceKey.create method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts
+      the standard constructor parameter. If you want to specify custom constructor parameters, use createCustom()
+      instead.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: "public static create < T >(name: string,\r\n    serviceClass: { new (serviceScope: ServiceScope); }): ServiceKey<T>;"
+returnType:
+  - elementKind: text
+    text: ServiceKey<T>
+returnDescription:
+  - elementKind: text
+    text: '- the newly created ServiceKey'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: name
+    typeColumn:
+      - elementKind: text
+        text: name
+    descriptionColumn:
+      - elementKind: text
+        text: name
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: serviceClass
+    typeColumn:
+      - elementKind: text
+        text: serviceClass
+    descriptionColumn:
+      - elementKind: text
+        text: serviceClass
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

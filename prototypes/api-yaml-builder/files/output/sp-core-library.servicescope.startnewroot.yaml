@@ -1,0 +1,24 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.startnewroot
+title: ServiceScope.startNewRoot method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default
+      implementations of ServiceKeys.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static startNewRoot(): ServiceScope;'
+returnType:
+  - elementKind: text
+    text: ServiceScope
+returnDescription:
+  - elementKind: text
+    text: '- the newly created root ServiceScope'
+parametersTable: []
+accessModifier: public
+isStatic: true

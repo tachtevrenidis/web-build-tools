@@ -1,0 +1,36 @@
+pageSchema: method
+pageId: sp-core-library.version.satisfies
+title: Version.satisfies method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Checks if this version satisfies the input parameter, therefore it's backwards compatible. They have to share the
+      same major version, and the input parameter must be an equal or more recent version. Examples: 1.0.0 satisfies
+      1.0.0 -> true 1.1.0 satisfies 1.0.0 -> true 2.0.0 satisfies 1.0.0 -> false 1.0.0 satisfies 1.1.0 -> false
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public satisfies(compareWith: Version): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: A boolean indicating if this version is compatible with the input parameter
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: compareWith
+    typeColumn:
+      - elementKind: text
+        text: compareWith
+    descriptionColumn:
+      - elementKind: text
+        text: compareWith
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

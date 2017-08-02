@@ -1,0 +1,34 @@
+pageSchema: class
+pageId: sp-core-library.text
+title: Text class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Common helper functions for working with strings. These utilities are intended to be simple, small, and very
+      broadly applicable.
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.text.format
+        text: format()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: string
+    descriptionColumn:
+      - elementKind: text
+        text: >-
+          String Format, like C# string format. Usage Example: StringUtilities.format("hello {0}!", "mike") will return
+          "hello mike!"
+    isDeprecated: false
+    isBeta: false
+    isStatic: true

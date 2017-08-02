@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.getall
+title: Headers.getAll method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'getAll(name: string): Array<string>;'
+returnType:
+  - elementKind: text
+    text: Array<string>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

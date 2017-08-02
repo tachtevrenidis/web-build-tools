@@ -1,0 +1,75 @@
+pageSchema: package
+pageId: web-apis
+title: web-apis package
+package: web-apis
+deprecatedMessage: ''
+betaWarning: ''
+summary: []
+remarks: []
+classesTable:
+  - classColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.body
+        text: Body
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - classColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers
+        text: Headers
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - classColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise
+        text: Promise
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - classColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.request
+        text: Request
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - classColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.response
+        text: Response
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+interfacesTable:
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headersmap
+        text: HeadersMap
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.requestinit
+        text: RequestInit
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.responseinit
+        text: ResponseInit
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+  - interfaceColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.thenable
+        text: Thenable
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+functionsTable: []
+enumsTable: []

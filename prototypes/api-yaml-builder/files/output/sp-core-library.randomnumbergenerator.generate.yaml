@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: sp-core-library.randomnumbergenerator.generate
+title: RandomNumberGenerator.generate method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public generate(): number;'
+returnType:
+  - elementKind: text
+    text: number
+returnDescription: []
+parametersTable: []
+accessModifier: public
+isStatic: false

@@ -1,0 +1,46 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.provide
+title: ServiceScope.provide method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      ServiceScope.provide() is used to register an implemententation of the given serviceKey for the current scope. It
+      may only be used when the ServiceScope is in an "unfinished" state, i.e. before finish() has been called.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public provide < T >(serviceKey: ServiceKey<T>, service: T): T;'
+returnType:
+  - elementKind: text
+    text: T
+returnDescription:
+  - elementKind: text
+    text: '- the same object that was passed as the "service" parameter'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: serviceKey
+    typeColumn:
+      - elementKind: text
+        text: serviceKey
+    descriptionColumn:
+      - elementKind: text
+        text: serviceKey
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: service
+    typeColumn:
+      - elementKind: text
+        text: service
+    descriptionColumn:
+      - elementKind: text
+        text: service
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

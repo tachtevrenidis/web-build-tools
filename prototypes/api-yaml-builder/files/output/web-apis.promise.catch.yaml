@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.promise.catch
+title: Promise.catch method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'catch < U >(onRejected?: (error: any) => U | Thenable<U>): Promise<U>;'
+returnType:
+  - elementKind: text
+    text: Promise<U>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

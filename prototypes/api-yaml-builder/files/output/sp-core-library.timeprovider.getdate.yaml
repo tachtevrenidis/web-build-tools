@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: sp-core-library.timeprovider.getdate
+title: TimeProvider.getDate method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public getDate(): Date;'
+returnType:
+  - elementKind: text
+    text: Date
+returnDescription: []
+parametersTable: []
+accessModifier: public
+isStatic: false

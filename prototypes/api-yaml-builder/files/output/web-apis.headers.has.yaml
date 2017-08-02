@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.has
+title: Headers.has method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'has(name: string): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

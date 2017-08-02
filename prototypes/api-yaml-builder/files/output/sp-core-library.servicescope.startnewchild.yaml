@@ -1,0 +1,24 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.startnewchild
+title: ServiceScope.startNewChild method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Constructs a new ServiceScope that is a child of the current scope. For any keys that are not explicitly provided
+      by the child scope, the parent hierarchy will be consulted.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public startNewChild(): ServiceScope;'
+returnType:
+  - elementKind: text
+    text: ServiceScope
+returnDescription:
+  - elementKind: text
+    text: '- the newly created root ServiceScope'
+parametersTable: []
+accessModifier: public
+isStatic: false

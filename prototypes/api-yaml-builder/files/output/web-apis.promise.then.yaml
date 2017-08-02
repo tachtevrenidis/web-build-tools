@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.promise.then
+title: Promise.then method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'then < U >(onFulfilled?: (value: T) => U | Thenable<U>, onRejected?: (error: any) => U | Thenable<U>): Promise<U>;'
+returnType:
+  - elementKind: text
+    text: Promise<U>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

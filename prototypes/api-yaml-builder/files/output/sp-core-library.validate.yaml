@@ -1,0 +1,65 @@
+pageSchema: class
+pageId: sp-core-library.validate
+title: Validate class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      This class implements provides a standard way to validate properties and function parameters. Unlike debug
+      assertions, Validate checks are always performed and will always throw an error, even in a production release. As
+      such, be careful not to overuse these checks in a way that might impact performance.
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.validate.isnonemptystring
+        text: 'isNonemptyString(value, variableName)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: 'Throws an exception if the specified string is null, undefined, or an empty string.'
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.validate.isnotnullorundefined
+        text: 'isNotNullOrUndefined(value, variableName)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Throws an exception if the specified value is null or undefined.
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.validate.istrue
+        text: 'isTrue(value, variableName)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn:
+      - elementKind: text
+        text: Throws an exception if the specified value is not true.
+    isDeprecated: false
+    isBeta: false
+    isStatic: true

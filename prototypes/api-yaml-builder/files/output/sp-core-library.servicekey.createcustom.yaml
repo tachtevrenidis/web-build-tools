@@ -1,0 +1,44 @@
+pageSchema: method
+pageId: sp-core-library.servicekey.createcustom
+title: ServiceKey.createCustom method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static createCustom < T >(name: string, defaultCreator: ServiceCreator<T>): ServiceKey<T>;'
+returnType:
+  - elementKind: text
+    text: ServiceKey<T>
+returnDescription:
+  - elementKind: text
+    text: '- the newly created ServiceKey'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: name
+    typeColumn:
+      - elementKind: text
+        text: name
+    descriptionColumn:
+      - elementKind: text
+        text: name
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: defaultCreator
+    typeColumn:
+      - elementKind: text
+        text: defaultCreator
+    descriptionColumn:
+      - elementKind: text
+        text: defaultCreator
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

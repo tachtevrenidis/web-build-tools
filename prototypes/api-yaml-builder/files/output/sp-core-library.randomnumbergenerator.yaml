@@ -1,0 +1,44 @@
+pageSchema: class
+pageId: sp-core-library.randomnumbergenerator
+title: RandomNumberGenerator class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: This is the default implementation of IRandomNumberGenerator that simply calls Math.random().
+remarks: []
+extends: []
+implements:
+  - elementKind: text
+    text: IRandomNumberGenerator
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.randomnumbergenerator.generate
+        text: generate()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: number
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(serviceScope: ServiceScope);'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: sp-core-library.randomnumbergenerator
+      text: RandomNumberGenerator
+    - elementKind: text
+      text: ' class'
+  remarks: []

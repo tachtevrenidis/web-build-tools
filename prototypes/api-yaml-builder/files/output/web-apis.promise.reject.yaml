@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.promise.reject
+title: Promise.reject method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static reject(error: any): Promise<any>;'
+returnType:
+  - elementKind: text
+    text: Promise<any>
+returnDescription: []
+parametersTable: []
+accessModifier: public
+isStatic: true

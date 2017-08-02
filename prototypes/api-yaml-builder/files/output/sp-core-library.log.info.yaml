@@ -1,0 +1,53 @@
+pageSchema: method
+pageId: sp-core-library.log.info
+title: Log.info method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Logs an informational message
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static info(source: string, message: string, scope?: ServiceScope): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: source
+    typeColumn:
+      - elementKind: text
+        text: source
+    descriptionColumn:
+      - elementKind: text
+        text: source
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: message
+    typeColumn:
+      - elementKind: text
+        text: message
+    descriptionColumn:
+      - elementKind: text
+        text: message
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: scope
+    typeColumn:
+      - elementKind: text
+        text: scope
+    descriptionColumn:
+      - elementKind: text
+        text: scope
+    isOptional: true
+    isSpread: false
+accessModifier: public
+isStatic: true

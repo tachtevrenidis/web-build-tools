@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: sp-core-library.timeprovider.gettimestamp
+title: TimeProvider.getTimestamp method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public getTimestamp(): number;'
+returnType:
+  - elementKind: text
+    text: number
+returnDescription: []
+parametersTable: []
+accessModifier: public
+isStatic: false

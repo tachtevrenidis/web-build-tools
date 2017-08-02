@@ -1,0 +1,22 @@
+pageSchema: method
+pageId: sp-core-library.guid.equals
+title: Guid.equals method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Compare this instance to another Guid instance
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public equals(guid: Guid): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: True if this instance and the specified Guid object represent the same value.
+parametersTable: []
+accessModifier: public
+isStatic: false

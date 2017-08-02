@@ -1,0 +1,36 @@
+pageSchema: method
+pageId: sp-core-library.version.lessthan
+title: Version.lessThan method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Checks if this version is less (i.e. older) than the input parameter. Missing patch number is treated as zero
+      Examples: 0.9.9 lessThan 1.0.0 -> true 2.0 lessThan 2.0.0 -> false 3.0 lessThan 3.0.1 -> true 04.01 lessThan 4.1
+      -> false
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public lessThan(compareWith: Version): boolean;'
+returnType:
+  - elementKind: text
+    text: boolean
+returnDescription:
+  - elementKind: text
+    text: A boolean indicating if this version is less than the input parameter
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: compareWith
+    typeColumn:
+      - elementKind: text
+        text: compareWith
+    descriptionColumn:
+      - elementKind: text
+        text: compareWith
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

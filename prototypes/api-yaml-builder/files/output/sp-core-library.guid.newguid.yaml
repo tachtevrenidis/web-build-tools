@@ -1,0 +1,24 @@
+pageSchema: method
+pageId: sp-core-library.guid.newguid
+title: Guid.newGuid method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Returns a new Guid instance with a pseudo-randomly generated Guid, according to the version 4 UUID algorithm from
+      RFC 4122.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static newGuid(randomNumberGenerator?: IRandomNumberGenerator): Guid;'
+returnType:
+  - elementKind: text
+    text: Guid
+returnDescription:
+  - elementKind: text
+    text: A new unique Guid object
+parametersTable: []
+accessModifier: public
+isStatic: true

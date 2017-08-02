@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.set
+title: Headers.set method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'set(name: string, value: string): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

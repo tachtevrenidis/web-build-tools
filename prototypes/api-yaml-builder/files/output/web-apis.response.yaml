@@ -1,0 +1,64 @@
+pageSchema: class
+pageId: web-apis.response
+title: Response class
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+extends:
+  - elementKind: text
+    text: Body
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.response.clone
+        text: clone()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Response
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.response.error
+        text: error()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Response
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.response.redirect
+        text: redirect()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Response
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(body?: BodyInit, init?: ResponseInit);'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: gulp-core-build-typescript.response
+      text: Response
+    - elementKind: text
+      text: ' class'
+  remarks: []

@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.body.arraybuffer
+title: Body.arrayBuffer method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'arrayBuffer(): Promise<ArrayBuffer>;'
+returnType:
+  - elementKind: text
+    text: Promise<ArrayBuffer>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

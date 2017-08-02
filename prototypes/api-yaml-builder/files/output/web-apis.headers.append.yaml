@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.append
+title: Headers.append method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'append(name: string, value: string): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

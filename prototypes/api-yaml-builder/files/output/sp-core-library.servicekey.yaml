@@ -1,0 +1,54 @@
+pageSchema: class
+pageId: sp-core-library.servicekey
+title: ServiceKey class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      The ServiceKey is a lookup key that is used when calling ServiceScope.consume() to fetch a dependency. The key
+      also defines a default implementation of the dependency, which will be autocreated by the root scope if the
+      dependency is not found. Providing a default implementation ensures that new dependencies can be safely introduced
+      without inadvertently breaking components that are loaded by an older host (that does not provide the new
+      dependency).
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.servicekey.create
+        text: 'create(name, serviceClass)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: ServiceKey<T>
+    descriptionColumn:
+      - elementKind: text
+        text: >-
+          Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that
+          accepts the standard constructor parameter. If you want to specify custom constructor parameters, use
+          createCustom() instead.
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: sp-core-library.servicekey.createcustom
+        text: 'createCustom(name, defaultCreator)'
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: ServiceKey<T>
+    descriptionColumn:
+      - elementKind: text
+        text: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
+    isDeprecated: false
+    isBeta: false
+    isStatic: true

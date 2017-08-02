@@ -1,0 +1,110 @@
+pageSchema: class
+pageId: web-apis.headers
+title: Headers class
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.append
+        text: append()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.delete
+        text: delete()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.foreach
+        text: forEach()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.get
+        text: get()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: string
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.getall
+        text: getAll()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Array<string>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.has
+        text: has()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: boolean
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.headers.set
+        text: set()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: void
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(headers?:Headers|HeadersMap)'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: gulp-core-build-typescript.headers
+      text: Headers
+    - elementKind: text
+      text: ' class'
+  remarks: []

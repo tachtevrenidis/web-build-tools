@@ -1,0 +1,35 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.createdefaultandprovide
+title: ServiceScope.createDefaultAndProvide method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      This is a shorthand function that constructs the default implementation of the specified serviceKey, and then
+      registers it by calling ServiceScope.provide().
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public createDefaultAndProvide < T >(serviceKey: ServiceKey<T>): T;'
+returnType:
+  - elementKind: text
+    text: T
+returnDescription:
+  - elementKind: text
+    text: '- a service instance that was constructed using ServiceKey.defaultCreator'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: serviceKey
+    typeColumn:
+      - elementKind: text
+        text: serviceKey
+    descriptionColumn:
+      - elementKind: text
+        text: serviceKey
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

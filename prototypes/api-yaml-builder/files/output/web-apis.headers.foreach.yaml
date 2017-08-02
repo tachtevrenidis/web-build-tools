@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.foreach
+title: Headers.forEach method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'forEach(callback: (value: string, name: string) => void): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

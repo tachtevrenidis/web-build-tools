@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.response.error
+title: Response.error method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'static error(): Response;'
+returnType:
+  - elementKind: text
+    text: Response
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: true

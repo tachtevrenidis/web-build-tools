@@ -1,0 +1,42 @@
+pageSchema: method
+pageId: sp-core-library.validate.isnotnullorundefined
+title: Validate.isNotNullOrUndefined method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Throws an exception if the specified value is null or undefined.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static isNotNullOrUndefined(value: any, variableName: string): void;'
+returnType:
+  - elementKind: text
+    text: void
+returnDescription: []
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: value
+    typeColumn:
+      - elementKind: text
+        text: value
+    descriptionColumn:
+      - elementKind: text
+        text: value
+    isOptional: false
+    isSpread: false
+  - parameterColumn:
+      - elementKind: text
+        text: variableName
+    typeColumn:
+      - elementKind: text
+        text: variableName
+    descriptionColumn:
+      - elementKind: text
+        text: variableName
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

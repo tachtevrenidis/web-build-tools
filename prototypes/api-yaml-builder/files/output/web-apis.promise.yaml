@@ -1,0 +1,108 @@
+pageSchema: class
+pageId: web-apis.promise
+title: Promise class
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+extends: []
+implements:
+  - elementKind: text
+    text: Thenable
+propertiesTable: []
+methodsTable:
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.all
+        text: all()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: 'Promise<[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]>'
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.catch
+        text: catch()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<U>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.race
+        text: race()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: Promise<T>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.reject
+        text: reject()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: Promise<any>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.resolve
+        text: resolve()
+    accessModifierColumn:
+      - elementKind: text
+        text: public
+    returnsColumn:
+      - elementKind: text
+        text: Promise<T>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: true
+  - methodColumn:
+      - elementKind: codeLink
+        linkedPageId: web-apis.promise.then
+        text: then()
+    accessModifierColumn: []
+    returnsColumn:
+      - elementKind: text
+        text: Promise<U>
+    descriptionColumn: []
+    isDeprecated: false
+    isBeta: false
+    isStatic: false
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(callback: (resolve: (value?: T | Thenable<T>) => void, reject: (error?: any) => void) => void);'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: gulp-core-build-typescript.promise
+      text: Promise
+    - elementKind: text
+      text: ' class'
+  remarks: []

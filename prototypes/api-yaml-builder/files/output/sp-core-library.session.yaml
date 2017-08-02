@@ -1,0 +1,14 @@
+pageSchema: class
+pageId: sp-core-library.session
+title: Session class
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: This class contains contextual information about the application's current session.
+remarks: []
+extends: []
+implements: []
+propertiesTable: []
+methodsTable: []

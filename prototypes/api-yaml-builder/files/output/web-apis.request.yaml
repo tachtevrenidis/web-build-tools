@@ -1,0 +1,28 @@
+pageSchema: class
+pageId: web-apis.request
+title: Request class
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+extends:
+  - elementKind: text
+    text: Body
+implements: []
+propertiesTable: []
+methodsTable: []
+classConstructor:
+  fullSignature:
+    - elementKind: text
+      text: 'constructor(input: string|Request, init?:RequestInit);'
+  parametersTable: []
+  summary:
+    - elementKind: text
+      text: 'Constructs a new instance of the '
+    - elementKind: codeLink
+      linkedPageId: gulp-core-build-typescript.request
+      text: Request
+    - elementKind: text
+      text: ' class'
+  remarks: []

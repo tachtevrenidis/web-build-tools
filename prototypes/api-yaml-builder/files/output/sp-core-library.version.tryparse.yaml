@@ -1,0 +1,33 @@
+pageSchema: method
+pageId: sp-core-library.version.tryparse
+title: Version.tryParse method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: Tries to construct a new Version instance using the version string. Returns undefined if not successful.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static tryParse(versionString: string | undefined | null): Version | undefined;'
+returnType:
+  - elementKind: text
+    text: Version | undefined
+returnDescription:
+  - elementKind: text
+    text: 'If valid, a new Version instace. Otherwise, undefined.'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: versionString
+    typeColumn:
+      - elementKind: text
+        text: versionString
+    descriptionColumn:
+      - elementKind: text
+        text: versionString
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: true

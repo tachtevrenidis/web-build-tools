@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.body.json
+title: Body.json method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'json(): Promise<any>;'
+returnType:
+  - elementKind: text
+    text: Promise<any>
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

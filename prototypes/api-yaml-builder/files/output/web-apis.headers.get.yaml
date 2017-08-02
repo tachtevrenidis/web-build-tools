@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.headers.get
+title: Headers.get method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'get(name: string): string;'
+returnType:
+  - elementKind: text
+    text: string
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

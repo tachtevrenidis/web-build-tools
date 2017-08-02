@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.response.clone
+title: Response.clone method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'clone(): Response;'
+returnType:
+  - elementKind: text
+    text: Response
+returnDescription: []
+parametersTable: []
+accessModifier: ''
+isStatic: false

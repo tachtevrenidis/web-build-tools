@@ -1,0 +1,34 @@
+pageSchema: method
+pageId: sp-core-library.urlqueryparametercollection.getvalues
+title: UrlQueryParameterCollection.getValues method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Returns the values of all of the matching query parameters or undefined if the key doesn't exist. Examples:
+      this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}]
+      getValues('TEST') ---> ['done', 'notdone'] getValues('debug') ---> ['false'] getValues('lost') ---> undefined
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public getValues(param: string): (string | undefined)[] | undefined;'
+returnType:
+  - elementKind: text
+    text: '(string | undefined)[] | undefined'
+returnDescription: []
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: param
+    typeColumn:
+      - elementKind: text
+        text: param
+    descriptionColumn:
+      - elementKind: text
+        text: param
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false

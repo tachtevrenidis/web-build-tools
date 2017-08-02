@@ -1,0 +1,18 @@
+pageSchema: method
+pageId: web-apis.promise.resolve
+title: Promise.resolve method
+package: web-apis
+deprecatedMessage: []
+betaWarning: ''
+summary: []
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public static resolve < T >(value?: T | Thenable<T>): Promise<T>;'
+returnType:
+  - elementKind: text
+    text: Promise<T>
+returnDescription: []
+parametersTable: []
+accessModifier: public
+isStatic: true

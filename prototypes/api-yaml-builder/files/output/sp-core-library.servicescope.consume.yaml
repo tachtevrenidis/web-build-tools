@@ -1,0 +1,36 @@
+pageSchema: method
+pageId: sp-core-library.servicescope.consume
+title: ServiceScope.consume method
+package: sp-core-library
+deprecatedMessage: []
+betaWarning: ''
+summary:
+  - elementKind: text
+    text: >-
+      Components should call this function to "consume" a dependency, i.e. look up the serviceKey and return the
+      registered service instance. If the instance cannot be found, then a default instance will be autocreated and
+      registered with the root ServiceScope.
+remarks: []
+fullSignature:
+  - elementKind: text
+    text: 'public consume < T >(serviceKey: ServiceKey<T>): T;'
+returnType:
+  - elementKind: text
+    text: T
+returnDescription:
+  - elementKind: text
+    text: '- the service instance'
+parametersTable:
+  - parameterColumn:
+      - elementKind: text
+        text: serviceKey
+    typeColumn:
+      - elementKind: text
+        text: serviceKey
+    descriptionColumn:
+      - elementKind: text
+        text: serviceKey
+    isOptional: false
+    isSpread: false
+accessModifier: public
+isStatic: false
