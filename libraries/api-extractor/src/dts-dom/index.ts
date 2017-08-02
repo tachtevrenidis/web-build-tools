@@ -198,7 +198,7 @@ export type Type = TypeReference | UnionType | IntersectionType | PrimitiveType 
 
 export type Import = ImportAllDeclaration | ImportDefaultDeclaration | ImportNamedDeclaration;
 
-export type NamespaceMember = InterfaceDeclaration | TypeAliasDeclaration | ClassDeclaration | NamespaceDeclaration | ConstDeclaration | FunctionDeclaration;
+export type NamespaceMember = InterfaceDeclaration | TypeAliasDeclaration | ClassDeclaration | NamespaceDeclaration | ConstDeclaration | FunctionDeclaration | EnumDeclaration | ModuleDeclaration;
 export type ModuleMember = InterfaceDeclaration | TypeAliasDeclaration | ClassDeclaration | NamespaceDeclaration | ConstDeclaration | FunctionDeclaration | Import;
 export type TopLevelDeclaration =  NamespaceMember | ExportEqualsDeclaration | ModuleDeclaration | EnumDeclaration | Import;
 
@@ -557,13 +557,17 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
         return out;
     }
 
-    function startWithDeclareOrExport(s: string, flags: DeclarationFlags | undefined  = DeclarationFlags.None) {
+    function startWithDeclareOrExport(s: string, declaration: NamespaceMember) {
         if (getContextFlags() & ContextFlags.InAmbientNamespace) {
             // Already in an all-export context
             start(s);
-        } else if (flags & DeclarationFlags.Export) {
-            start(`export ${s}`);
-        } else if (flags & DeclarationFlags.ExportDefault) {
+        } else if (declaration.flags & DeclarationFlags.Export) {
+            if (declaration.kind === 'interface') {
+                start(`export ${s}`);
+            } else {
+                start(`export declare ${s}`);
+            }
+        } else if (declaration.flags & DeclarationFlags.ExportDefault) {
             start(`export default ${s}`);
         } else {
             start(`declare ${s}`);
@@ -795,7 +799,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeInterface(d: InterfaceDeclaration) {
         printDeclarationComments(d);
-        startWithDeclareOrExport(`interface ${d.name} `, d.flags);
+        startWithDeclareOrExport(`interface ${d.name} `, d);
         if (d.baseTypes && d.baseTypes.length) {
             print(`extends `);
             let first = true;
@@ -825,7 +829,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
             newline();
         }
 
-        startWithDeclareOrExport(`function ${f.name}`, f.flags);
+        startWithDeclareOrExport(`function ${f.name}`, f);
         writeTypeParameters(f.typeParameters);
         print('(')
         writeDelimited(f.parameters, ', ', writeParameter);
@@ -859,7 +863,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeClass(c: ClassDeclaration) {
         printDeclarationComments(c);
-        startWithDeclareOrExport(`${classFlagsToString(c.flags)}class ${c.name}`, c.flags);
+        startWithDeclareOrExport(`${classFlagsToString(c.flags)}class ${c.name}`, c);
         writeTypeParameters(c.typeParameters);
         if (c.baseType) {
             print(' extends ');
@@ -927,7 +931,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeNamespace(ns: NamespaceDeclaration) {
         printDeclarationComments(ns);
-        startWithDeclareOrExport(`namespace ${ns.name} {`, ns.flags);
+        startWithDeclareOrExport(`namespace ${ns.name} {`, ns);
         contextStack.push(ContextFlags.InAmbientNamespace);
         newline();
         indentLevel++;
@@ -943,7 +947,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeConst(c: ConstDeclaration) {
         printDeclarationComments(c);
-        startWithDeclareOrExport(`const ${c.name}: `, c.flags);
+        startWithDeclareOrExport(`const ${c.name}: `, c);
         writeReference(c.type);
         print(';');
         newline();
@@ -951,7 +955,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeAlias(a: TypeAliasDeclaration) {
         printDeclarationComments(a);
-        startWithDeclareOrExport(`type ${a.name}`, a.flags);
+        startWithDeclareOrExport(`type ${a.name}`, a);
         writeTypeParameters(a.typeParameters);
         print(' = ');
         writeReference(a.type);
@@ -966,7 +970,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeModule(m: ModuleDeclaration) {
         printDeclarationComments(m);
-        startWithDeclareOrExport(`module '${m.name}' {`, m.flags);
+        startWithDeclareOrExport(`module '${m.name}' {`, m);
         contextStack.push(ContextFlags.Module);
         newline();
         indentLevel++;
@@ -1001,7 +1005,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
 
     function writeEnum(e: EnumDeclaration) {
         printDeclarationComments(e);
-        startWithDeclareOrExport(`${e.constant ? 'const ' : ''}enum ${e.name} {`, e.flags);
+        startWithDeclareOrExport(`${e.constant ? 'const ' : ''}enum ${e.name} {`, e);
         newline();
         indentLevel++;
         for (const member of e.members) {
