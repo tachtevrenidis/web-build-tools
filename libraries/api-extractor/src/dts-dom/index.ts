@@ -78,14 +78,14 @@ export interface ClassDeclaration extends DeclarationBase {
     members: ClassMember[];
     implements: InterfaceDeclaration[];
     typeParameters: TypeParameter[];
-    baseType?: ObjectTypeReference;
+    baseType?: NamedTypeReference;
 }
 
 export interface InterfaceDeclaration extends DeclarationBase {
     kind: "interface";
     name: string;
     members: ObjectTypeMember[];
-    baseTypes?: ObjectTypeReference[];
+    baseTypes: NamedTypeReference[];
 }
 
 export interface ImportAllDeclaration extends DeclarationBase {
@@ -166,6 +166,7 @@ export interface ArrayTypeReference {
 export interface NamedTypeReference {
     kind: "name";
     name: string;
+    typeArguments?: Type[];
 }
 
 export interface TypeofReference {
@@ -363,7 +364,8 @@ export const create = {
     namedTypeReference(name: string): NamedTypeReference {
         return {
             kind: 'name',
-            name
+            name,
+            typeArguments: []
         };
     },
 
@@ -705,9 +707,22 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
                 case "type-parameter":
                 case "class":
                 case "interface":
-                case "name":
                 case "alias":
                     print(e.name);
+                    break;
+
+                case "name":
+                    print(e.name);
+                    if (e.typeArguments && e.typeArguments.length) {
+                        print('<');
+                        let first = true;
+                        for (const a of e.typeArguments) {
+                            if (!first) print(', ');
+                            writeReference(a);
+                            first = false;
+                        }
+                        print('>');
+                    }
                     break;
 
                 case "array":
@@ -789,6 +804,7 @@ export function emit(rootDecl: TopLevelDeclaration, rootFlags = ContextFlags.Non
                 writeReference(baseType);
                 first = false;
             }
+            print(' ');
         }
         printObjectTypeMembers(d.members);
         newline();
