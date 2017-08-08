@@ -14,7 +14,7 @@ import ApiJsonGenerator from './generators/ApiJsonGenerator';
 
 // const ROOT_DIR: string = './test/inputs/example4';
 const ROOT_DIR: string = '../../../spc/spfx-core/sp-core-library';
-const ENTRY_POINT: string = 'src/index.ts';
+const ENTRY_POINT: string = 'lib/index.d.ts';
 
 const compilerOptions: ts.CompilerOptions = {
   target: ts.ScriptTarget.ES5,
