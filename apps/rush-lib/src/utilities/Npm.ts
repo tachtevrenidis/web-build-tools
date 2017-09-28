@@ -19,25 +19,29 @@ export default class Npm {
         `view ${packageName} time --json`.split(' '),
         cwd,
         env);
-      if (packageTime && packageTime !== '') {
+      try {
         Object.keys(JSON.parse(packageTime)).forEach(v => {
           if (semver.valid(v)) {
             versions.push(v);
           }
         });
-      } else {
+      } catch (e) {
+        console.log(`Failed to get time for package ${packageName}: ${e.message}`);
+      }
+
+      if (versions.length === 0) {
         console.log(`Package ${packageName} time value does not exist. Fall back to versions.`);
         // time property does not exist. It happens sometimes. Fall back to versions.
         const packageVersions: string = Utilities.executeCommandAndCaptureOutput('npm',
-          `view ${packageName} versions --json`.split(' '),
-          cwd,
-          env);
+        `view ${packageName} versions --json`.split(' '),
+        cwd,
+        env);
         if (packageVersions && packageVersions.length > 0) {
-          (JSON.parse(packageVersions)).forEach(v => {
-            versions.push(v);
-          });
+        (JSON.parse(packageVersions)).forEach(v => {
+          versions.push(v);
+        });
         } else {
-          console.log(`No version is found for ${packageName}`);
+        console.log(`No version is found for ${packageName}`);
         }
       }
     } catch (error) {
