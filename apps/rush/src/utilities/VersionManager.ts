@@ -65,14 +65,20 @@ export class VersionManager {
     identifier?: string,
     shouldCommit?: boolean
   ): void {
-    // Bump all the lock step version policies.
-    this._versionPolicyConfiguration.bump(lockStepVersionPolicyName, bumpType, identifier, shouldCommit);
+    if (!this._isLockStep(lockStepVersionPolicyName)) {
+      throw new Error(`Invalid lockstep version policy ${lockStepVersionPolicyName}`);
+    }
+    const shouldBumpLockStepVersion: boolean = this.shouldBump(lockStepVersionPolicyName);
+    if (shouldBumpLockStepVersion) {
+      // Bump all the lock step version policies.
+      this._versionPolicyConfiguration.bump(lockStepVersionPolicyName, bumpType, identifier, shouldCommit);
 
-    // Update packages and generate change files due to lock step bump.
-    this._ensure(lockStepVersionPolicyName, shouldCommit);
+      // Update packages and generate change files due to lock step bump.
+      this._ensure(lockStepVersionPolicyName, shouldCommit);
 
-    // Refresh rush configuration
-    this._rushConfiguration = RushConfiguration.loadFromConfigurationFile(this._rushConfiguration.rushJsonFile);
+      // Refresh rush configuration
+      this._rushConfiguration = RushConfiguration.loadFromConfigurationFile(this._rushConfiguration.rushJsonFile);
+    }
 
     // Update projects based on individual policies
     const changeManager: ChangeManager = new ChangeManager(this._rushConfiguration,
@@ -87,12 +93,56 @@ export class VersionManager {
     }
   }
 
+  /**
+   * True if there are related change files for projects with the provided lock step version policy.
+   * False if there are no related change files.
+   */
+  public shouldBump(lockStepVersionPolicyName?: string): boolean {
+    const modifiedPackages: Set<string> = new Set<string>();
+
+    const changeManager: ChangeManager = new ChangeManager(this._rushConfiguration);
+    changeManager.load(this._rushConfiguration.changesFolder);
+    changeManager.changes.forEach((changeInfo) => {
+      if (changeInfo.changeType > ChangeType.none) {
+        modifiedPackages.add(changeInfo.packageName);
+      }
+    });
+
+    const relatedPackages: Set<string> = new Set<string>();
+    this._rushConfiguration.projects.forEach((project) => {
+      if (project.versionPolicyName) {
+        if (lockStepVersionPolicyName) {
+          // Only include packages with this policy
+          if (project.versionPolicyName === lockStepVersionPolicyName) {
+            relatedPackages.add(project.packageName);
+          }
+        } else if (this._isLockStep(project.versionPolicyName)) {
+          // include all lockstepped packages.
+          relatedPackages.add(project.packageName);
+        }
+      }
+    });
+
+    const difference: Set<string> = new Set([...modifiedPackages].filter(x => !relatedPackages.has(x)));
+    return difference.size > 0;
+  }
+
   public get updatedProjects(): Map<string, IPackageJson> {
     return this._updatedProjects;
   }
 
   public get changeFiles(): Map<string, ChangeFile> {
     return this._changeFiles;
+  }
+
+  private _isLockStep(policyName: string): boolean {
+    if (policyName) {
+      const policy: VersionPolicy = this._versionPolicyConfiguration.getVersionPolicy(policyName);
+      if (policy instanceof LockStepVersionPolicy) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private _ensure(versionPolicyName?: string, shouldCommit?: boolean): void {
