@@ -1,11 +1,11 @@
-// Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-// See LICENSE in the project root for license information.
-
 // tslint:disable:no-any
 
 /**
+ * Indicates that a function or property overrides a virtual definition.
+ *
+ * @remarks
  * This decorator is applied to a class's member function or property.
- * It indicates that the definition overrides another defintion (of the same name)
+ * It indicates that the definition overrides another definition (of the same name)
  * from the base class.  The base class definition must be marked as \@virtual.
  * This decorator is currently used for documentation purposes only.
  * In the future, it may be enforced at runtime.

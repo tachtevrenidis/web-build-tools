@@ -1,9 +1,9 @@
-// Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-// See LICENSE in the project root for license information.
-
 /**
+ * Indicates that a class should be extended by other subclasses.
+ *
+ * @remarks
  * This decorator is applied to a class (but NOT member function or property).
- * It indicates that subclasses must not inherit from this class.
+ * It indicates that subclasses must not extend this class.
  * This decorator is currently used for documentation purposes only.
  * In the future, it may be enforced at runtime.
  *

@@ -1,9 +1,9 @@
-// Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-// See LICENSE in the project root for license information.
-
 // tslint:disable:no-any
 
 /**
+ * Indicates that a class's member function or property may be overridden by subclasses.
+ *
+ * @remarks
  * This decorator is applied to a class's member function or property.
  * It indicates that the definition may optionally be overridden in a
  * child class.  Conversely, if the \@virtual decorator is NOT applied to
