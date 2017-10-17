@@ -121,6 +121,8 @@ export interface IAstItemOptions {
    * The symbol used to export this AstItem from the AstPackage.
    */
   exportSymbol?: ts.Symbol;
+
+  longName?: string;
 }
 
 // Names of NPM scopes that contain packages that provide typings for the real package.
@@ -157,6 +159,9 @@ abstract class AstItem {
    * from the top-level AstPackage, not "MyClass" from the original definition.
    */
   public name: string;
+
+  public shortName: string;
+  public longName: string;
 
   /**
    * The name of an API item should be readable and not contain any special characters.
@@ -292,7 +297,14 @@ abstract class AstItem {
     this.declarationSymbol = options.declarationSymbol;
     this.exportSymbol = options.exportSymbol || this.declarationSymbol;
 
-    this.name = this.exportSymbol.name || '???';
+    this.shortName = this.exportSymbol.name || '???';
+    this.longName = options.longName || this.name;
+
+    if (options.longName) {
+      this.name = options.longName.replace(/\./g, '_');
+    } else {
+      this.name = this.shortName;
+    }
 
     let originalJsdoc: string = '';
     if (this.jsdocNode) {

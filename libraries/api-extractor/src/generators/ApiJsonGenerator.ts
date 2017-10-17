@@ -98,6 +98,8 @@ export default class ApiJsonGenerator extends AstItemVisitor {
 
     const structureNode: Object = {
       kind: kind,
+      shortName: astStructuredType.shortName || '',
+      longName: astStructuredType.longName || '',
       extends: astStructuredType.extends || '',
       implements: astStructuredType.implements || '',
       typeParameters: astStructuredType.typeParameters || [],
@@ -130,6 +132,8 @@ export default class ApiJsonGenerator extends AstItemVisitor {
     const valuesNode: Object = {};
     const enumNode: Object = {
       kind: ApiJsonFile.convertKindToJson(astEnum.kind),
+      shortName: astEnum.shortName || '',
+      longName: astEnum.longName || '',
       values: valuesNode,
       deprecatedMessage: astEnum.inheritedDeprecatedMessage || [],
       summary: astEnum.documentation.summary || [],
@@ -176,6 +180,8 @@ export default class ApiJsonGenerator extends AstItemVisitor {
 
     const newNode: Object = {
       kind: ApiJsonFile.convertKindToJson(astFunction.kind),
+      shortName: astFunction.shortName || '',
+      longName: astFunction.longName || '',
       signature: astFunction.getDeclarationLine(),
       returnValue: returnValueNode,
       parameters: this._createParameters(astFunction),

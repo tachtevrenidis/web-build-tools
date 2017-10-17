@@ -397,6 +397,14 @@
           "type": "string",
           "enum": [ "function" ]
         },
+
+        "shortName": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+
         "signature": {
           "description": "A text summary of the function definition",
           "type": "string"
@@ -479,6 +487,14 @@
           "type": "string",
           "enum": [ "class" ]
         },
+
+        "shortName": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+
         "summary": {
           "$ref": "#/definitions/docElementCollection"
         },
@@ -539,6 +555,14 @@
           "type": "string",
           "enum": [ "enum" ]
         },
+
+        "shortName": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+
         "summary": {
           "$ref": "#/definitions/docElementCollection"
         },
@@ -614,6 +638,14 @@
           "type": "string",
           "enum": [ "interface" ]
         },
+
+        "shortName": {
+          "type": "string"
+        },
+        "longName": {
+          "type": "string"
+        },
+
         "summary": {
           "$ref": "#/definitions/docElementCollection"
         },

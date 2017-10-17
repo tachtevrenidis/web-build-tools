@@ -51,7 +51,11 @@ export default class AstPackage extends AstItemContainer {
     // The scoped package name. (E.g. "@microsoft/api-extractor")
     this.name = extractor.packageName;
 
-    const exportSymbols: ts.Symbol[] = this.typeChecker.getExportsOfModule(this.declarationSymbol);
+    this._processMembers(this.declarationSymbol, '');
+  }
+
+  private _processMembers(moduleSymbol: ts.Symbol, scope: string): void {
+    const exportSymbols: ts.Symbol[] = this.typeChecker.getExportsOfModule(moduleSymbol);
     if (exportSymbols) {
       for (const exportSymbol of exportSymbols) {
         const followedSymbol: ts.Symbol = this.followAliases(exportSymbol);
@@ -64,19 +68,24 @@ export default class AstPackage extends AstItemContainer {
           continue;
         }
 
+        const longName: string = scope + followedSymbol.name;
+
         for (const declaration of followedSymbol.declarations) {
           const options: IAstItemOptions = {
             extractor: this.extractor,
             declaration,
             declarationSymbol: followedSymbol,
             jsdocNode: declaration,
-            exportSymbol
+            exportSymbol,
+            longName
           };
 
           if (followedSymbol.flags & (ts.SymbolFlags.Class | ts.SymbolFlags.Interface)) {
             this.addMemberItem(new AstStructuredType(options));
           } else if (followedSymbol.flags & ts.SymbolFlags.ValueModule) {
-            this.addMemberItem(new AstNamespace(options));
+            // this.addMemberItem(new AstNamespace(options));
+
+            this._processMembers(followedSymbol, longName + '.');
           } else if (followedSymbol.flags & ts.SymbolFlags.Function) {
             this.addMemberItem(new AstFunction(options));
           } else if (followedSymbol.flags & ts.SymbolFlags.Enum) {
