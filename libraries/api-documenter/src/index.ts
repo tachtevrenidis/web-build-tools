@@ -31,7 +31,7 @@ for (const filename of fsx.readdirSync(inputFolder)) {
 
 docItemSet.calculateReferences();
 
-const yaml: boolean = false;
+const yaml: boolean = true;
 
 if (yaml) {
   const yamlGenerator: YamlGenerator = new YamlGenerator(docItemSet);

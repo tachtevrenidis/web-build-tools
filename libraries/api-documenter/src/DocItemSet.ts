@@ -45,6 +45,8 @@ export class DocItem {
 
   public readonly apiItem: ApiItem;
   public readonly name: string;
+  public readonly shortName: string;
+  public readonly longName: string;
 
   public readonly docItemSet: DocItemSet;
   public readonly parent: DocItem | undefined;
@@ -55,6 +57,8 @@ export class DocItem {
 
     this.apiItem = apiItem;
     this.name = name;
+    this.longName = apiItem['longName'] || name;
+    this.shortName = apiItem['shortName'] || name;
     this.docItemSet = docItemSet;
 
     switch (this.apiItem.kind) {
@@ -164,7 +168,7 @@ export class DocItem {
    */
   public get isExternalPackage(): boolean {
     // We should define a better criteria for this
-    return this.apiItem.kind === 'package' && this.apiItem.name.substr(0, 1) === '@';
+    return false; // this.apiItem.kind === 'package' && this.apiItem.name.substr(0, 1) === '@';
   }
 }
 

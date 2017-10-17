@@ -123,10 +123,10 @@ export class YamlGenerator {
           name: 'Overview',
           href: './index.md'
         } as IYamlTocItem
-      ].concat(this._buildTocItems(docItems.filter(x => x.isExternalPackage)))
+      ].concat(this._buildTocItems(docItems.filter(x => !x.isExternalPackage)))
     });
 
-    const externalPackages: DocItem[] = docItems.filter(x => !x.isExternalPackage);
+    const externalPackages: DocItem[] = docItems.filter(x => x.isExternalPackage);
     if (externalPackages.length) {
       tocFile.items.push({
         name: '─────────────'
@@ -137,33 +137,54 @@ export class YamlGenerator {
       });
     }
 
-    this._buildTocItems(docItems);
     const tocFilePath: string = path.join(this._outputFolder, 'toc.yml');
     console.log('Writing ' + tocFilePath);
     this._writeYamlFile(tocFile, tocFilePath, '', undefined);
   }
 
   private _buildTocItems(docItems: DocItem[]): IYamlTocItem[] {
-    const tocItems: IYamlTocItem[] = [];
+    const namespaces = new Map<string, IYamlTocItem[]>();
+    this._buildTocItems2(docItems, namespaces);
+
+    const nodes: IYamlTocItem[] = [];
+
+    for (const namespaceName of namespaces.keys()) {
+      const namespace = namespaces.get(namespaceName);
+      nodes.push(
+        {
+          name: namespaceName,
+          items: namespace
+        }
+      );
+    }
+
+    return nodes;
+  }
+
+  private _buildTocItems2(docItems: DocItem[], namespaces: Map<string, IYamlTocItem[]>): void {
+
     for (const docItem of docItems) {
       if (this._shouldEmbed(docItem.kind)) {
         // Don't generate table of contents items for embedded definitions
         continue;
       }
 
+      const namespaceName: string = docItem.longName.substr(0, docItem.longName.length - docItem.shortName.length - 1);
+
+      let nodes: IYamlTocItem[] | undefined = namespaces.get(namespaceName);
+      if (!nodes) {
+        nodes = [];
+        namespaces.set(namespaceName, nodes);
+      }
+
       const tocItem: IYamlTocItem = {
-        name: RenderingHelpers.getUnscopedPackageName(docItem.name),
+        name: RenderingHelpers.getUnscopedPackageName(docItem.shortName),
         uid: this._getUid(docItem)
       };
 
-      tocItems.push(tocItem);
-
-      const childItems: IYamlTocItem[] = this._buildTocItems(docItem.children);
-      if (childItems.length > 0) {
-        tocItem.items = childItems;
-      }
+      nodes.push(tocItem);
+      this._buildTocItems2(docItem.children, namespaces);
     }
-    return tocItems;
   }
 
   private _shouldEmbed(docItemKind: DocItemKind): boolean {
@@ -200,7 +221,7 @@ export class YamlGenerator {
       yamlItem.isPreview = true;
     }
 
-    yamlItem.name = docItem.name;
+    yamlItem.name = docItem.longName;
     yamlItem.fullName = yamlItem.uid;
     yamlItem.langs = [ 'typeScript' ];
 
