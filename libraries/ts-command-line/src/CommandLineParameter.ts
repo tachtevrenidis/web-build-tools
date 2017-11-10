@@ -5,7 +5,7 @@
  * @public
  */
 export interface IConverterFunction<T> {
-  (initial: any): T; /* tslint:disable-line:no-any */
+  (initial: any): T | undefined; /* tslint:disable-line:no-any */
 }
 
 /**
@@ -27,11 +27,11 @@ export interface ICommandLineParserData {
  */
 export class CommandLineParameter<T> {
   private _converter: IConverterFunction<T>;
-  private _value: T;
+  private _value: T | undefined;
   private _keyData: string;
 
-  constructor(key: string, converter?: (data: string) => T) {
-    this._converter = converter || ((data: string) => data as any as T); /* tslint:disable-line:no-any */
+  constructor(key: string, converter?: (data: any) => T | undefined) { /* tslint:disable-line:no-any */
+    this._converter = converter || ((data: any) => data as T | undefined); /* tslint:disable-line:no-any */
     this._keyData = key;
   }
 
@@ -41,6 +41,10 @@ export class CommandLineParameter<T> {
    */
   public _setValue(data: ICommandLineParserData): void {
     this._value = this._converter(data[this._keyData]);
+
+    if (this._value === null) {
+      this._value = undefined; // Silly argparse library
+    }
   }
 
   /**
@@ -50,7 +54,7 @@ export class CommandLineParameter<T> {
    * whether the switch was provided.  For a CommandLineStringListParameter it will
    * be an array of strings.
    */
-  public get value(): T {
+  public get value(): T | undefined {
     return this._value;
   }
 

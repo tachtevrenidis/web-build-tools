@@ -10,12 +10,12 @@ import ProjectBuildTask from '../taskRunner/ProjectBuildTask';
 
 export interface ITaskSelectorConstructor {
   rushConfiguration: RushConfiguration;
-  toFlags: Array<string>;
-  fromFlags: Array<string>;
+  toFlags: Array<string> | undefined;
+  fromFlags: Array<string> | undefined;
   commandToRun: string;
   customFlags: string[];
   isQuietMode: boolean;
-  parallelism: number;
+  parallelism: number | undefined;
   isIncrementalBuildAllowed: boolean;
 }
 

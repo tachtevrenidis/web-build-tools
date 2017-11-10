@@ -33,12 +33,12 @@ class CommandLineOptionParameter extends CommandLineParameter<string> {
 
 // @public
 class CommandLineParameter<T> {
-  constructor(key: string, converter?: (data: string) => T);
+  constructor(key: string, converter?: (data: any) => T | undefined);
   // @internal
   public readonly _key: string;
   // @internal
   public _setValue(data: ICommandLineParserData): void;
-  public readonly value: T;
+  public readonly value: T | undefined;
 }
 
 // @public
