@@ -387,6 +387,10 @@ export function splitStyles(styles: string): ThemableArray {
  * @param {IStyleRecord} styleRecord May specify a style Element to update.
  */
 function registerStyles(styleArray: ThemableArray): void {
+  if (!window.document) {
+    return;
+  }
+  
   const head: HTMLHeadElement = document.getElementsByTagName('head')[0];
   const styleElement: HTMLStyleElement = document.createElement('style');
   const {
@@ -417,7 +421,8 @@ function registerStyles(styleArray: ThemableArray): void {
  * @param {ThemableArray} styleArray Array of IThemingInstruction objects to register.
  * @param {IStyleRecord} styleRecord May specify a style Element to update.
  */
-function registerStylesIE(styleArray: ThemableArray, styleRecord?: IStyleRecord): void {
+function 
+IE(styleArray: ThemableArray, styleRecord?: IStyleRecord): void {
   const head: HTMLHeadElement = document.getElementsByTagName('head')[0];
   const registeredStyles: IStyleRecord[] = _themeState.registeredStyles;
   let lastStyleElement: IExtendedHtmlStyleElement = _themeState.lastStyleElement;
